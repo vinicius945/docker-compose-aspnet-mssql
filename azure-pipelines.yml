@@ -5,7 +5,7 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  RestoreBuildProjects: '**/*.csproj'
+  RestoreBuildProjects: 'app/aspnetapp/aspnetapp.csproj'
 
 steps:
 - task: DotNetCoreCLI@2
