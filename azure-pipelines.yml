@@ -9,13 +9,13 @@ steps:
   inputs:
     azureSubscription: 'pf0841g1 - Azure para Estudantes (f85ce35b-59c2-4fb8-9627-68c4aa18fcce)'
     command: 'restore'
-    projects: '*/*.csproj'
+    projects: 'app/aspnetapp/aspnetapp.csproj'
     feedsToUse: 'select'
 - task: DotNetCoreCLI@2
   inputs:
     azureSubscription: 'pf0841g1 - Azure para Estudantes (f85ce35b-59c2-4fb8-9627-68c4aa18fcce)'
     command: 'build'
-    projects: '**/*.csproj'
+    projects: 'app/aspnetapp/aspnetapp.csproj'
     workingDirectory: '$(System.DefaultWorkingDirectory)'
 - task: DotNetCoreCLI@2
   inputs:
