@@ -4,21 +4,18 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-variables:
-  RestoreBuildProjects: 'app/aspnetapp/aspnetapp.csproj'
-
 steps:
 - task: DotNetCoreCLI@2
   displayName: Restore
   inputs:
     azureSubscription: 'pf0841g1 - Azure para Estudantes (f85ce35b-59c2-4fb8-9627-68c4aa18fcce)'
     command: restore
-    projects: '$(Parameters.RestoreBuildProjects)'
+    projects: 'app/aspnetapp/aspnetapp.csproj'
 - task: DotNetCoreCLI@2
   displayName: Build
   inputs:
     azureSubscription: 'pf0841g1 - Azure para Estudantes (f85ce35b-59c2-4fb8-9627-68c4aa18fcce)'
-    projects: '$(Parameters.RestoreBuildProjects)'
+    projects: 'app/aspnetapp/aspnetapp.csproj'
     arguments: '--configuration $(BuildConfiguration)'
 - task: DotNetCoreCLI@2
   displayName: Publish
