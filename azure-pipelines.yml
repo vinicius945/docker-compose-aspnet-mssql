@@ -16,14 +16,14 @@ steps:
   inputs:
     azureSubscription: 'pf0841g1 - Azure para Estudantes (f85ce35b-59c2-4fb8-9627-68c4aa18fcce)'
     projects: 'app/aspnetapp/aspnetapp.csproj'
-    arguments: '--configuration $(BuildConfiguration)'
+    arguments: '--configuration Release'
 - task: DotNetCoreCLI@2
   displayName: Publish
   inputs:
     azureSubscription: 'pf0841g1 - Azure para Estudantes (f85ce35b-59c2-4fb8-9627-68c4aa18fcce)'
     command: publish
     publishWebProjects: True
-    arguments: '--configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory)'
+    arguments: '--configuration Release --output $(build.artifactstagingdirectory)'
     zipAfterPublish: True
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact'
